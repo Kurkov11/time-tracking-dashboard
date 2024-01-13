@@ -1,0 +1,204 @@
+:root {
+--blue: hsl(246, 80%, 60%);
+--dark-blue: hsl(235, 46%, 20%);
+--very-dark-blue: hsl(226, 43%, 10%);
+--desaturated-blue: hsl(235, 45%, 61%);
+--pale-blue: hsl(236, 100%, 87%);
+
+--light-red: hsl(15, 100%, 70%);
+--soft-blue: hsl(195, 74%, 62%);
+--red: hsl(348, 100%, 68%);
+--lime-green: hsl(145, 58%, 55%);
+--violet: hsl(264, 64%, 52%);
+--soft-orange: hsl(43, 84%, 65%);
+
+}
+html {
+    background-color: var(--very-dark-blue);
+}
+p {
+    color: var(--pale-blue);
+    font-weight: 300;
+    font-size: 0.9rem;
+}
+.person-card .bottom p {
+    font-size: 1rem;
+}
+body {
+    font-family: 'rubik';
+}
+main {
+    background-color: var(--very-dark-blue);
+    padding: 25px;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+.grid{
+    display: grid;
+    gap: 20px;
+}
+
+/* MOBILE person-card DESIGN - start */
+.person-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--dark-blue);
+    border-radius: 15px
+}
+.person-card .top {
+    background-color: var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 25px 0;
+    border-radius: 15px;
+}
+.person-card .top #avatar{
+    width: 70px;
+    align-self: center; /* Prevent stretch in horizontal flex */
+    border-radius: 40px;
+    border: white 3px solid;
+}
+.person-card .top .report-info .report-for {
+    margin-bottom: 3px;
+}
+.person-card .top .report-info .name {
+    color: hsla(0, 0%, 100%, 0.8);
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+.person-card .bottom {
+    padding: 20px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    font-weight: 300;
+    color: var(--desaturated-blue);
+    text-align: center;
+}
+/* MOBILE person-card DESIGN - end */
+
+/* MOBILE section cards DESIGN- start */
+section {
+    background-repeat: no-repeat;
+    background-position: 95% -7%;
+    border-radius: 10px;
+    overflow: hidden; /* Apply border radius to the WHOLE card */
+}
+section .dark-part{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 25px;
+    background-color: var(--dark-blue);
+    margin-top: 40px; /* Show the coloured background */
+    border-radius: 10px 10px 0 0;
+    box-sizing: border-box;
+}
+section .dark-part .top{
+    display: flex;
+    justify-content: space-between;
+}
+section .dark-part .top h2{
+    color: white;
+    font-weight: 400;
+}
+section .dark-part .top img{
+    align-self: center; /* Avoid image stretching */
+}
+section .dark-part .bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+section .dark-part .bottom h1{
+    color: hsla(0, 0%, 100%, 0.8);
+    font-weight: 300;
+    font-size: 2rem;
+}
+#work-section{
+    background-color: var(--light-red);
+    background-image: url(images/icon-work.svg);
+}
+#play-section{
+    background-color: var(--soft-blue);
+    background-image: url(images/icon-play.svg);
+}
+#study-section{
+    background-color: var(--red);
+    background-image: url(images/icon-study.svg);
+}
+#exercise-section{
+    background-color: var(--lime-green);
+    background-image: url(images/icon-exercise.svg);
+    background-position: 95% 0%; /* Adjust the background position */
+}
+#social-section{
+    background-color: var(--violet);
+    background-image: url(images/icon-social.svg);
+    background-position: 95% -25%; /* Adjust the background position */
+}
+#self-care-section{
+    background-color: var(--soft-orange);
+    background-image: url(images/icon-self-care.svg);
+}
+/* MOBILE section cards DESIGN - end */
+@media only screen and (width >= 500px){ /* tablets */
+    main{
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+    }
+    .grid{
+        width: 450px; /* Hard coded (padding on the sides summed is 50px) */
+    }
+}
+@media only screen and (width >= 1025px) { /* desktops */
+    main {
+        padding: 0;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+    }
+    .grid{
+        width: auto; /* reset from other query*/
+        grid-template-columns: 230px 230px 230px 230px;
+    }
+    .grid .person-card {
+        grid-row: 1 / 3;
+    }
+    .person-card .top {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px 30px 60px 30px;
+    }
+    .person-card .top .report-info .name{
+        font-size: 2rem;
+    }
+    .person-card .top .report-info{
+        padding: 20px 0px 0px 0px;
+    }
+    .person-card .top #avatar {
+        align-self: auto; /* Flex became vertical - reset align-self to default */
+    }
+    .person-card .bottom {
+        height: 100%;
+        grid-template-columns: 1fr;
+        justify-content: space-between;
+        text-align: left;
+        padding: 20px 30px 20px 30px;
+        gap: 15px;
+    }
+    section .dark-part {
+        gap: 20px;
+    }
+    section .dark-part .bottom{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    section .dark-part .bottom h1{
+        font-size: 3rem;
+        color: white;
+    }
+}

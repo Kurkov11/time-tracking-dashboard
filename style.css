@@ -1,6 +1,7 @@
 :root {
 --blue: hsl(246, 80%, 60%);
 --dark-blue: hsl(235, 46%, 20%);
+--lightened-dark-blue: hsl(236, 32%, 36%);
 --very-dark-blue: hsl(226, 43%, 10%);
 --desaturated-blue: hsl(235, 45%, 61%);
 --pale-blue: hsl(236, 100%, 87%);
@@ -76,6 +77,13 @@ main {
     color: var(--desaturated-blue);
     text-align: center;
 }
+.person-card .bottom .period {
+    width: fit-content;
+}
+.person-card .bottom .period:hover {
+    color: white !important;
+    cursor: pointer !important;
+}
 /* MOBILE person-card DESIGN - end */
 
 /* MOBILE section cards DESIGN- start */
@@ -120,6 +128,10 @@ section .dark-part .bottom h1{
     background-color: var(--light-red);
     background-image: url(images/icon-work.svg);
 }
+section .dark-part:hover{
+    background-color: var(--lightened-dark-blue);
+    cursor: pointer;
+}
 #play-section{
     background-color: var(--soft-blue);
     background-image: url(images/icon-play.svg);
@@ -141,6 +153,14 @@ section .dark-part .bottom h1{
 #self-care-section{
     background-color: var(--soft-orange);
     background-image: url(images/icon-self-care.svg);
+}
+
+.bold-ellipsis{
+    display: none;
+}
+.ellipsis-area{
+    display: flex;
+    align-items: center;
 }
 /* MOBILE section cards DESIGN - end */
 @media only screen and (width >= 500px){ /* tablets */

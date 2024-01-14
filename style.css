@@ -77,9 +77,6 @@ main {
     color: var(--desaturated-blue);
     text-align: center;
 }
-.person-card .bottom .period {
-    width: fit-content;
-}
 .person-card .bottom .period:hover {
     color: white !important;
     cursor: pointer !important;
@@ -174,6 +171,9 @@ section .dark-part:hover{
     }
 }
 @media only screen and (width >= 1025px) { /* desktops */
+    .person-card .bottom .period {
+        width: fit-content;
+    }
     main {
         padding: 0;
         height: 100vh;
